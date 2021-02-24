@@ -1,0 +1,164 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>qpNz6HKoJBUhtyc-gt-938969-2021-02-23T19:49:30.269Z::tf.xml</types1:EntryId>
+      <types1:Name>Taskflow_simple</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>andre.yamada2</types1:CreatedBy>
+      <types1:CreationDate>2021-02-23T19:49:30Z</types1:CreationDate>
+      <types1:ModifiedBy>andre.yamada2</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-23T19:50:09Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>andre.yamada2</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-23T19:51:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.Taskflow_simple/Taskflow_simple.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="Taskflow simple"
+                   name="Taskflow_simple"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:Task-success</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="klif3x6y" targetId="klif3x7j"/>
+               </start>
+               <eventContainer id="klif3x7j">
+                  <service id="klif3x6x">
+                     <title>Data Task 1</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">Task success</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5sjWUR39Do0kQ5DZK2W1Gc</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="Task-success">temp.Data Task 1</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task 1/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task 1/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="klif3x7n" targetId="klif3x7m"/>
+                  <events>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="klif3x7h"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Data Task 1/fault"
+                            id="klif3x7i"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="klif3x7m" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="klif3x7q">
+                     <service id="klif3x8x">
+                        <title>Notification Task simple success</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">andre.yamada@digiage.com.br</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">Taskflow task 1 success</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;Taskflow task 1 success&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="klif3x7r" targetId="klif3x7m" type="containerLink"/>
+                  </flow>
+                  <flow id="klif3x7t">
+                     <service id="klif3x98">
+                        <title>Notification Task simple fail</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">andre.yamada@digiage.com.br</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">Taskflow task 1 fail</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;Taskflow task 1 fail&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="klif3x7u" targetId="klif3x7m" type="containerLink"/>
+                  </flow>
+                  <link id="klif3x7p" targetId="klif3x7q" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.DataTask1[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="klif3x7s" targetId="klif3x7t" type="containerLink"/>
+                  <link id="klif3x7o" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="Task-success"
+                              isByCopy="true"
+                              name="Task-success">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>ct4TPA9xbEtja6CpSDG7i8</types1:GUID>
+      <types1:DisplayName>Taskflow simple</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-24T12:40:28.694Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

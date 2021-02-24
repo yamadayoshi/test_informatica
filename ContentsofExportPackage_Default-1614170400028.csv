@@ -1,0 +1,10 @@
+objectPath,objectName,objectType,id
+/Explore/Default,Parameter,DTEMPLATE,3H5zlY2MDRwliVrdVbNTAO
+/Explore/Default,Joiner,DTEMPLATE,1URLhai9kUQgo7rwGQPmem
+/Explore/Default,Taskflow two jobs,TASKFLOW,iacsFsvliikj2E7Jed0qGm
+/Explore/Default,csv,DTEMPLATE,6gxpObwgukye2uK7LUKw2a
+/Explore/Default,Task fail,MTT,aUgBLUd9jM3cTMdYJK41Ke
+/Explore/Default,Aggregator,DTEMPLATE,f0UH5lgA36veayfiSl2jWm
+/Explore/Default,Task success,MTT,5sjWUR39Do0kQ5DZK2W1Gc
+/Explore,Default,Project,aW7ebWTsNsmhJKQfoKYo8F
+/Explore/Default,Taskflow simple,TASKFLOW,ct4TPA9xbEtja6CpSDG7i8

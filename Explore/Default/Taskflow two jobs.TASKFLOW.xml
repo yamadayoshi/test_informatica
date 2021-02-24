@@ -1,0 +1,259 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kR55aaabdqpw0VP-gt-619573-2021-02-22T20:35:35.164Z::tf.xml</types1:EntryId>
+      <types1:Name>Taskflow_two_jobs</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>andre.yamada2</types1:CreatedBy>
+      <types1:CreationDate>2021-02-22T20:35:35Z</types1:CreationDate>
+      <types1:ModifiedBy>andre.yamada2</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-23T19:57:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>andre.yamada2</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-23T19:57:50Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.Taskflow_two_jobs/Taskflow_two_jobs.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="Taskflow two jobs"
+                   name="Taskflow_two_jobs"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Data Task Fail" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:MappingTask1</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task Success" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:Task-success</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kli07ufb" targetId="kli07ufy"/>
+               </start>
+               <eventContainer id="kli07ufy">
+                  <service id="kli07ufa">
+                     <title>Data Task Fail</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">MappingTask1</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">jsD7EKj34G6iXC1ySRC3wH</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="MappingTask1">temp.Data Task Fail</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Data Task Fail/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Data Task Fail/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kli07ufc" targetId="kli07uej"/>
+                  <events>
+                     <catch faultField="temp.Data Task Fail/fault"
+                            id="kli07ufw"
+                            interrupting="true"
+                            name="error"/>
+                     <catch faultField="temp.Data Task Fail/fault"
+                            id="kli07ufx"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <container id="kli07uej" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="kli07uek">
+                     <service id="kli07ujp">
+                        <title>Notification Task 1 Success</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">andre.yamada@digiage.com.br</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">Task Success task 1</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant">&lt;p&gt;{$temp.DataTask1} was executed successfully&lt;/p&gt;</parameter>
+                        </serviceInput>
+                        <serviceOutput/>
+                     </service>
+                     <link id="kli07ues" targetId="kli07uej" type="containerLink"/>
+                  </flow>
+                  <flow id="kli07uem">
+                     <eventContainer id="kli07uih">
+                        <service id="kli07uhu">
+                           <title>Data Task Success</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">Task success</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">5sjWUR39Do0kQ5DZK2W1Gc</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="Task-success">temp.Data Task Success</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Data Task Success/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Data Task Success/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Data Task Success/output/Error_Message">Error Message</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="kli07uip" targetId="kli07uio"/>
+                        <events>
+                           <catch faultField="temp.Data Task Success/fault"
+                                  id="kli07uif"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task Success/fault"
+                                  id="kli07uig"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <container id="kli07uio" type="exclusive">
+                        <title>Decision 2</title>
+                        <flow id="kli07uis">
+                           <service id="kli07uk4">
+                              <title>Notification Task 2 Success</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">andre.yamada@digiage.com.br</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">Task Success task 2</parameter>
+                                 <parameter name="Email Content Type" source="constant">text</parameter>
+                                 <parameter name="Email Body" source="constant">&lt;p&gt;{$temp.DataTask1} was executed successfully&lt;/p&gt;</parameter>
+                              </serviceInput>
+                              <serviceOutput/>
+                           </service>
+                           <link id="kli07uit" targetId="kli07uio" type="containerLink"/>
+                        </flow>
+                        <flow id="kli07uiv">
+                           <service id="kli07uj2">
+                              <title>Notification Task 2 Fail</title>
+                              <serviceName>emailNotificationService</serviceName>
+                              <serviceGUID/>
+                              <serviceInput>
+                                 <parameter name="Email To" source="constant">andre.yamada@digiage.com.br</parameter>
+                                 <parameter name="Email Cc" source="constant"/>
+                                 <parameter name="Email Subject" source="constant">Task Fail</parameter>
+                                 <parameter name="Email Content Type" source="constant">text</parameter>
+                                 <parameter name="Email Body" source="constant"/>
+                              </serviceInput>
+                              <serviceOutput/>
+                           </service>
+                           <link id="kli07uiw" targetId="kli07uio" type="containerLink"/>
+                        </flow>
+                        <link id="kli07uir" targetId="kli07uis" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$temp.DataTaskSuccess[1]/output[1]/Task_Status}</arg>
+                                 <arg name="right">1</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="kli07uiu" targetId="kli07uiv" type="containerLink"/>
+                     </container>
+                     <link id="kli07uet" targetId="kli07uej" type="containerLink"/>
+                  </flow>
+                  <link id="kli07ueq" targetId="kli07uek" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.DataTaskFail[1]/output[1]/Task_Status}</arg>
+                           <arg name="right">1</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kli07uer" targetId="kli07uem" type="containerLink"/>
+                  <link id="kli07uf3" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="MappingTask1"
+                              isByCopy="true"
+                              name="MappingTask1">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="Task-success"
+                              isByCopy="true"
+                              name="Task-success">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>iacsFsvliikj2E7Jed0qGm</types1:GUID>
+      <types1:DisplayName>Taskflow two jobs</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-02-24T12:40:28.684Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

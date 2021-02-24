@@ -1,0 +1,439 @@
+{
+  "name" : "Default-1614170400028",
+  "sourceOrgId" : "6DMUBi2OiIHgqapGKhhGGq",
+  "sourceOrgName" : "Digiage Technologies",
+  "exportedObjects" : [ {
+    "objectGuid" : "1ErzbQDJFoVcyh1ncuMIOM",
+    "objectName" : "Mapping1",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/andre",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G1700000000000Z"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "3H5zlY2MDRwliVrdVbNTAO",
+    "objectName" : "Parameter",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G17000000000011"
+      },
+      "objectRefs" : [ "1hDCAxOjSE3dorseZpp2Mt" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "100i7p4e0fplB0ZIjLOO4a",
+    "objectName" : "DESKTOP-V4UQKHA",
+    "objectType" : "AgentGroup",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G2500000000000A"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "1URLhai9kUQgo7rwGQPmem",
+    "objectName" : "Joiner",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G1700000000000N"
+      },
+      "objectRefs" : [ "1hDCAxOjSE3dorseZpp2Mt", "6fLZJqU2uYTbBysBrIWW6t", "7Sxyu8kXBbZksOwnWZYWWY" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "6fLZJqU2uYTbBysBrIWW6t",
+    "objectName" : "employee-database",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0B000000000002"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "6OQa4uVryN3bkgZ6H2VF4O",
+    "objectName" : "TASKS",
+    "objectType" : "Folder",
+    "path" : "/Explore/Mayk_DataIntegration",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "jsD7EKj34G6iXC1ySRC3wH",
+    "objectName" : "MappingTask1",
+    "objectType" : "MTT",
+    "path" : "/Explore/Mayk_DataIntegration/TASKS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0Z000000000002"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "iacsFsvliikj2E7Jed0qGm",
+    "objectName" : "Taskflow two jobs",
+    "objectType" : "TASKFLOW",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "kR55aaabdqpw0VP-gt-619573-2021-02-22T20:35:35.164Z::tf.xml"
+      },
+      "objectRefs" : [ "5sjWUR39Do0kQ5DZK2W1Gc", "jsD7EKj34G6iXC1ySRC3wH" ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "6gxpObwgukye2uK7LUKw2a",
+    "objectName" : "csv",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G1700000000000L"
+      },
+      "objectRefs" : [ "1hDCAxOjSE3dorseZpp2Mt" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "aUgBLUd9jM3cTMdYJK41Ke",
+    "objectName" : "Task fail",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0Z00000000000B"
+      },
+      "objectRefs" : [ "1ErzbQDJFoVcyh1ncuMIOM", "is7hZL0PC45lFrbGn7sWCj", "100i7p4e0fplB0ZIjLOO4a", "1FmnfsLsyjBlxLJZ8THiaL" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "7Sxyu8kXBbZksOwnWZYWWY",
+    "objectName" : "csv_output",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0B000000000009"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "f0UH5lgA36veayfiSl2jWm",
+    "objectName" : "Aggregator",
+    "objectType" : "DTEMPLATE",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G1700000000000M"
+      },
+      "objectRefs" : [ "1hDCAxOjSE3dorseZpp2Mt", "7Sxyu8kXBbZksOwnWZYWWY" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "is7hZL0PC45lFrbGn7sWCj",
+    "objectName" : "Sample CSV Connection",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0B000000000004"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "1hDCAxOjSE3dorseZpp2Mt",
+    "objectName" : "csv",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0B000000000008"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "5sjWUR39Do0kQ5DZK2W1Gc",
+    "objectName" : "Task success",
+    "objectType" : "MTT",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0Z00000000000E"
+      },
+      "objectRefs" : [ "100i7p4e0fplB0ZIjLOO4a", "1hDCAxOjSE3dorseZpp2Mt", "6gxpObwgukye2uK7LUKw2a", "7Sxyu8kXBbZksOwnWZYWWY" ],
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "7rw5UCbVpmpgQPpESdJGWn",
+    "objectName" : "Mayk_DataIntegration",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "aW7ebWTsNsmhJKQfoKYo8F",
+    "objectName" : "Default",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : [ {
+        "name" : "IS_DEF_LOC",
+        "value" : "true"
+      } ],
+      "additionalInfo" : {
+        "description" : "Auto-generated Default Project",
+        "contentType" : null,
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "1FmnfsLsyjBlxLJZ8THiaL",
+    "objectName" : "Output_Flat_File",
+    "objectType" : "Connection",
+    "path" : "/SYS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01604G0B000000000006"
+      },
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    }
+  }, {
+    "objectGuid" : "ct4TPA9xbEtja6CpSDG7i8",
+    "objectName" : "Taskflow simple",
+    "objectType" : "TASKFLOW",
+    "path" : "/Explore/Default",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qpNz6HKoJBUhtyc-gt-938969-2021-02-23T19:49:30.269Z::tf.xml"
+      },
+      "objectRefs" : [ "5sjWUR39Do0kQ5DZK2W1Gc" ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  }, {
+    "objectGuid" : "aBGkeDWH5oag8Qtodaw0Im",
+    "objectName" : "andre",
+    "objectType" : "Project",
+    "path" : "/Explore",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "objectRefs" : [ ],
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  } ]
+}
